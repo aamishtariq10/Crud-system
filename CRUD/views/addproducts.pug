@@ -1,0 +1,25 @@
+extends layout
+
+block content
+  .container 
+    h3 Add Car details
+    form(action = "/products/add" , method = "Post")
+        .form-group
+            label(for='carCompany') Product Company 
+            input#inputcompany.form-control(type = 'text' name="carCompany" placeholder='Honda')
+            small#help.form-text.text-muted Enter CarCompany name (honda).
+        .form-group
+            label(for='carName') Car Name 
+            input#inputname.form-control(type = 'text' name="carName" placeholder='city')
+         
+        .form-group
+            label(for='carmodel') Car Model 
+            input#inputmodel.form-control(type = 'number' name="carModel" placeholder='2020')
+           
+        .form-group
+            label(for='carPrice') Car Price 
+            input#inputprice.form-control(type = 'number' name="carPrice" placeholder='1000')
+        .form-group
+            label(for='Features') Feactures
+            input#price.form-control(type='text' name = "Features" placeholder='black , automatic')
+        button.btn.btn-primary(type='submit') Submit

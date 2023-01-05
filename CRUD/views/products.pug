@@ -1,0 +1,41 @@
+extends layout
+block content
+  .container 
+    .row
+        .col-lg-8
+             p Add New Cars
+        .col-lg-4
+            a.btn.btn-info(href='products/add' role='button' class= 'float-right') Add Cars
+    hr
+    h3 List of available Cars
+    table.table 
+        thead
+              tr 
+                th Car-Company
+                th Car-Name 
+                th Car-Model
+                th Price 
+                th Features
+                th Edit 
+                th Delete
+                th Add to Cart
+            
+        tbody  
+          each car in Cars 
+              tr
+                td=car.carCompany 
+                td=car.carName 
+                td=car.carModel
+                td=car.carPrice
+                td=car.Features
+                td 
+                      a.btn.btn-warning(href='products/edit/' +car._id, role='button' class= 'float-right') Edit 
+                td 
+                      a.btn.btn-danger(href='products/delete/'+car._id, role='button' class= 'float-right') Delete  
+                td
+                      a.btn.btn-success(href='products/cart/'+car._id, role='button' class= 'float-right') Add to cart
+        
+    
+
+
+    block content

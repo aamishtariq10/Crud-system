@@ -1,0 +1,25 @@
+extends layout
+
+block content
+  .container 
+    h3 Edit Car details
+    form(action = "/products/edit/"+Cars.id  method = "Post")
+        .form-group
+            label(for='carCompany') Product Company 
+            input#inputcompany.form-control(type = 'text' name="carCompany"  value = Cars.carCompany)
+            small#help.form-text.text-muted Enter CarCompany name (honda).
+        .form-group
+            label(for='carName') Car Name 
+            input#inputname.form-control(type = 'text' name="carName"  value = Cars.carName)
+         
+        .form-group
+            label(for='carmodel') Car Model 
+            input#inputmodel.form-control(type = 'number' name="carModel"  value = Cars.carModel)
+           
+        .form-group
+            label(for='carPrice') Car Price 
+            input#inputprice.form-control(type = 'number' name="carPrice"  value = Cars.carPrice)
+        .form-group
+            label(for='Features') Feactures
+            input#price.form-control(type='text' name = "Features"  value = Cars.Features)
+        button.btn.btn-primary(type='submit') Submit

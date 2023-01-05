@@ -1,0 +1,38 @@
+extends layout
+block content
+ .container
+    - var total = 0 
+    table.table 
+        thead
+              tr 
+                th Car-Company
+                th Car-Name 
+                th Car-Model
+                th Price 
+                th Features
+                th total
+                th Actions
+        tbody  
+            each item in Cart 
+              - total += item.carPrice  
+              tr
+                td=item.carCompany 
+                td=item.carName 
+                td=item.carModel
+                td=item.carPrice
+                td=item.Features   
+                td
+                td
+                      a.btn.btn-primary(href='products/cart/delete/'+item._id ,role='button') Remove from cart
+         
+        tfoot 
+            tr
+              td
+              td 
+              td 
+              td 
+              td 
+              td = #{total}/-
+              td
+              
+              
